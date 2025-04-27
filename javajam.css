@@ -1,0 +1,333 @@
+/* Universal Selector */
+* {
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #D2B48C;
+  color: #000;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+#wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-image: url('cup.jpg');
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 105px;
+  height: 128px;
+  color: #FEF6C2;
+  text-align: center;
+  line-height: 128px;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+header a {
+  color: #231814;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #CC9933;
+}
+
+nav {
+  background-color: #231814;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+nav li {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #000;
+  width: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  color: #FEF6C2;
+}
+
+nav a:visited {
+  color: #D2B48C;
+}
+
+nav a:hover {
+  color: #CC9933;
+}
+
+main {
+  background-color: #FEF6C2;
+  overflow: auto;
+  padding: 0;
+  width: 100%;
+  flex: 1;
+}
+
+/* Hero Images */
+#homehero {
+  background-image: url('road.jpg');
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#heroguitar {
+  background-image: url('guitar.jpg');
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#heromugs {
+  background-image: url('threemugs.jpg');
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#herojobs {
+  height: 300px;
+  background-image: url('coffeecup.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Main Content Styles */
+main h3,
+main h4,
+main h2,
+main p,
+main div,
+main dl {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-align: left;
+}
+
+main ul {
+  padding-left: 1em;
+  text-align: left;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  width: 80%;
+}
+
+input, textarea {
+  margin-bottom: .5em;
+}
+
+input[type="submit"] {
+  width: 9em;
+}
+
+label {
+  margin-bottom: 0.2em;
+}
+
+/* Mobile/Desktop Toggle */
+#mobile {
+  display: inline;
+}
+
+#desktop {
+  display: none;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #D2B48C;
+  font-size: small;
+  font-style: italic;
+  text-align: center;
+  padding: 1em;
+  border-top: 2px solid #8C3826;
+}
+
+/* Table Styles */
+table {
+  width: 90%;
+  margin: 0 auto;
+  border-spacing: 0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+tr:nth-of-type(odd) {
+  background-color: #D2B48E;
+}
+
+/* Media Queries */
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  header {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+
+  nav li {
+    border-bottom: none;
+  }
+
+  #homehero {
+    height: 300px;
+    background-image: url('road.jpg');
+  }
+
+  #heromugs {
+    background-image: url('threemugs.jpg');
+  }
+
+  #heroguitar {
+    background-image: url('guitar.jpg');
+  }
+
+  #herojobs {
+    background-image: url('herojobs.jpg');
+  }
+
+  #flow {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: row;
+  }
+
+  form {
+    width: 40%;
+    display: grid;
+    grid-template-columns: 6em 1fr;
+    gap: 1em;
+  }
+
+  input[type="submit"] {
+    grid-column: 2;
+  }
+
+  #mobile {
+    display: none;
+  }
+
+  #desktop {
+    display: inline;
+  }
+
+  h4 {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    grid-area: header;
+    background-image: url('coffeelogo.jpg');
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  #wrapper {
+    display: grid;
+    grid-template:
+      "header header"
+      "nav main"
+      "footer footer"
+      / 200px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  form {
+    width: 40%;
+    display: grid;
+    grid-template-columns: 6em 1fr;
+    gap: 1em;
+  }
+
+  input[type="submit"] {
+    grid-column: 2;
+  }
+
+  .onethird {
+    float: left;
+    width: 33%;
+    padding: 1em;
+  }
+}
+
+@media (max-width: 599px) {
+  nav ul {
+    flex-direction: column;
+    font-size: 1.25em;
+  }
+
+  nav li {
+    width: 100%;
+    border-bottom: 1px solid #000;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  .onethird {
+    float: none;
+    width: 100%;
+    padding: 1em;
+  }
+}
